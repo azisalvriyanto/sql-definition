@@ -97,7 +97,7 @@ I need to build a database schema for CRM service from scratch according to the 
                 `is_verified` ENUM ('TRUE', 'FALSE') NOT NULL DEFAULT "FALSE",
                 `is_active` ENUM ('TRUE', 'FALSE') NOT NULL DEFAULT "FALSE",
                 `created_at` timestamp NOT NULL DEFAULT (now()),
-                `updated_at` timestamp
+                `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
             );
             ```
         1. Create customer table:
@@ -109,7 +109,7 @@ I need to build a database schema for CRM service from scratch according to the 
                 `email` varchar(255) UNIQUE NOT NULL,
                 `avatar` varchar(255),
                 `created_at` timestamp NOT NULL DEFAULT (now()),
-                `updated_at` timestamp
+                `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
             );
             ```
         1. Create register_approval table:
