@@ -133,7 +133,7 @@ I need to build a database schema for CRM service from scratch according to the 
 1. Milestone 3
     * Before inserting new actor, I must field role table.
         ```sql
-        INSERT INTO roles (name) VALUES ('superadmin'), ('admin');
+        INSERT INTO roles (id, name) VALUES (1, 'superadmin'), (2, 'admin');
         ```
     * I insert one super admin to actor table. I don't input id, created_at and updated_at columns, because it has default value.
         ```sql
